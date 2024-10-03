@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #aacf06;
+            background-color: #d1d406;
             margin: 0;
             padding: 0;
         }
@@ -39,7 +39,7 @@
             margin-bottom: 40px;
         }
         .titles {
-            background-color: #ffffff;
+            background-color: #b7c402;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -64,11 +64,11 @@
             color: white;
         }
         .intro {
-            background-color: #e3f2fd;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
             text-align: center;
+            background-color: transparent;
         }
         .intro h2 {
             margin: 0 0 10px 0;
@@ -82,6 +82,20 @@
             border-radius: 8px;
             margin-top: 20px;
         }
+        .brief-description {
+            background-color: yellow;
+            padding: 20px;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .match-details {
+            display: none;
+            margin-top: 20px;
+        }
+        .match-details iframe {
+            margin-top: 10px;
+        }
     </style>
 
     <script>
@@ -94,6 +108,16 @@
             var selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
                 selectedSection.style.display = 'block';
+            }
+        }
+
+        // Función para mostrar/ocultar detalles del partido
+        function showMatchDetails(matchId) {
+            var matchDetails = document.getElementById(matchId);
+            if (matchDetails.style.display === 'block') {
+                matchDetails.style.display = 'none';
+            } else {
+                matchDetails.style.display = 'block';
             }
         }
     </script>
@@ -114,14 +138,11 @@
         <!-- Sección Introducción -->
         <section id="introduccion" class="intro">
             <h2>Bienvenidos a la página sobre Carlos Bianchi y sus títulos en Boca Juniors</h2>
-            <p>Esta página está dedicada a los logros de Carlos Bianchi como entrenador de Boca Juniors. Durante su paso por el club, Bianchi conquistó numerosos títulos, incluidos campeonatos locales e internacionales. A continuación, podrás explorar los torneos ganados, sus respectivas finales y los momentos más destacados de su historia en Boca.</p>
-            
+            <div class="brief-description">
+                <p>Esta página está dedicada a los logros de Carlos Bianchi como entrenador de Boca Juniors. Durante su paso por el club, Bianchi conquistó numerosos títulos, incluidos campeonatos locales e internacionales. A continuación, podrás explorar los torneos ganados, sus respectivas finales y los momentos más destacados de su historia en Boca.</p>
+            </div>
             <!-- Foto de Bianchi -->
-            <img src="carlos-bianchi.webp" alt="Carlos Bianchi ">
-
-            <!-- Video homenaje debajo de la foto -->
-            <h3>ERA DE BIANCHI EN Boca</h3>
-            <iframe src="https://www.youtube.com/watch?v=8kja91Ta570" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img src="images.jfif" alt="Carlos Bianchi saludando">
         </section>
 
         <!-- Sección Torneos Argentinos -->
@@ -188,7 +209,7 @@
                 <p><a onclick="showMatchDetails('match-2000')">Ver detalles del partido Boca 2-1 Real Madrid</a></p>
                 
                 <!-- Detalles del partido 2000 -->
-                <div id="match-2000" class="match-details" style="display:none;">
+                <div id="match-2000" class="match-details">
                     <h4>Boca 2-1 Real Madrid (Intercontinental 2000)</h4>
                     <p>Con goles de Martín Palermo, Boca derrotó al poderoso Real Madrid en un partido histórico en Tokio.</p>
                     <!-- Video del partido -->
@@ -199,12 +220,12 @@
             <!-- Copa Intercontinental 2003 -->
             <div class="title-item">
                 <h3>Copa Intercontinental 2003</h3>
-                <p>Boca se impuso al AC Milan en penales, logrando su tercer título intercontinental bajo el mando de Bianchi.</p>
-                <img src="2003 milan intercontinental.jpg" alt="Copa Intercontinental 2003">
+                <p>En una emocionante definición por penales, Boca derrotó al Milan en uno de los partidos más recordados de la historia.</p>
+                <img src="6NCFY6SVMVFVHGFBTI4PYK3ED4.jpg" alt="Copa Intercontinental 2003">
                 <p><a onclick="showMatchDetails('match-2003')">Ver detalles del partido Boca 1(3)-1(1) Milan</a></p>
 
                 <!-- Detalles del partido 2003 -->
-                <div id="match-2003" class="match-details" style="display:none;">
+                <div id="match-2003" class="match-details">
                     <h4>Boca 1(3) - 1(1) Milan (Intercontinental 2003)</h4>
                     <p>En una emocionante definición por penales, Boca derrotó al Milan en uno de los partidos más recordados de la historia.</p>
                     <!-- Video del partido -->
@@ -215,7 +236,7 @@
     </div>
 
     <footer>
-        <p>Todos los derechos reservados © Boca Juniors</p>
+        <p>Todos los derechos reservados © Laureano ison Ponce- Joel Olmedo - PROYECTO AMAD</p>
     </footer>
 </body>
 </html>
